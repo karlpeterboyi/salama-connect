@@ -15,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        if (config('app.env') === 'production') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         $locale = Session::get('locale', config('app.locale', 'en'));
         if (in_array($locale, ['en', 'sw'])) {
             App::setLocale($locale);

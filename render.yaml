@@ -1,0 +1,71 @@
+services:
+  - type: web
+    name: salama-connect
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: APP_NAME
+        value: Salama Connect
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        sync: false
+      - key: APP_KEY
+        generateValue: true
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: info
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: salama-db
+          property: connectionString
+      - key: DB_HOST
+        fromDatabase:
+          name: salama-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: salama-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: salama-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: salama-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: salama-db
+          property: password
+      - key: PESAPAL_CONSUMER_KEY
+        sync: false
+      - key: PESAPAL_CONSUMER_SECRET
+        sync: false
+      - key: PESAPAL_LIVE
+        value: "false"
+      - key: PESAPAL_NOTIFICATION_ID
+        sync: false
+
+databases:
+  - name: salama-db
+    plan: free
+    databaseName: salama
+    user: salama
+    region: frankfurt
