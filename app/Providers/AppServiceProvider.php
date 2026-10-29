@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Http\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,13 +15,12 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        if (config('app.env') === 'production') {
-            \Illuminate\Support\Facades\URL::forceScheme('https');
+        // Behind Render / load balancers
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
         }
 
-        $locale = Session::get('locale', config('app.locale', 'en'));
-        if (in_array($locale, ['en', 'sw'])) {
-            App::setLocale($locale);
-        }
+        // Locale is applied in middleware — never touch Session here
+        // (session is not started during provider boot)
     }
 }
