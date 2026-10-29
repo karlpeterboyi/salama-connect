@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('title', 'Home')
-@section('meta_description', 'Salama Connect - Find care, request help, join programs or support orphans and vulnerable children in Bagamoyo, Tanzania.')
+@section('meta_description', "Salama Connect - Find care, request help, join programs or support orphans and vulnerable children in Bagamoyo, Tanzania.")
 
 @section('content')
 {{-- Hero --}}
 <section class="bg-gradient-to-br from-orange-500 to-amber-600 text-white">
     <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 text-center">
-        <p class="text-sm uppercase tracking-widest opacity-90 mb-3">Salama Children\'s Home · SOVc</p>
+        <p class="text-sm uppercase tracking-widest opacity-90 mb-3">Salama Children's Home · SOVc</p>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
             {{ __('messages.care_dignity_opportunity') }}
         </h1>
@@ -51,7 +51,7 @@
     </div>
 </section>
 
-{{-- {{ __('messages.our_programs') }} --}}
+{{-- Our Programs --}}
 <section class="max-w-7xl mx-auto px-4 py-16">
     <div class="text-center mb-10">
         <h2 class="text-3xl font-bold text-gray-900">{{ __('messages.our_programs') }}</h2>
@@ -90,22 +90,22 @@
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">{{ __('messages.our_mission') }}</h2>
         <p class="text-lg opacity-90">
-            Founded by Mr. Muhammad Mwiga on 7 January 2023, Salama Children’s Home provides care, protection, education and skills development so orphans and vulnerable children can build brighter, independent futures.
+            Founded by Mr. Muhammad Mwiga on 7 January 2023, Salama Children's Home provides care, protection, education and skills development so orphans and vulnerable children can build brighter, independent futures.
         </p>
     </div>
 </section>
 
-    {{-- Founder teaser --}}
-    <section class="max-w-7xl mx-auto px-4 py-12">
-        <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col md:flex-row">
-            <img src="{{ asset('images/about/founder.jpg') }}" alt="Mr. Muhammad Mwiga" class="md:w-2/5 h-56 md:h-auto object-cover object-top">
-            <div class="p-6 md:p-8 flex flex-col justify-center">
-                <p class="text-sm uppercase tracking-wide text-orange-600 font-medium">Our Founder</p>
-                <h2 class="text-2xl font-bold text-gray-900 mt-1">Mr. Muhammad Mwiga</h2>
-                <p class="text-gray-600 mt-3">Founded Salama Children’s Home on 7 January 2023 after personally supporting five street children who went on to become skilled professionals. His vision: care, protection, education and skills for every vulnerable child.</p>
-                <a href="{{ route('about') }}" class="inline-block mt-4 text-salama font-semibold hover:underline">Read the full story →</a>
-            </div>
+{{-- Founder teaser --}}
+<section class="max-w-7xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col md:flex-row">
+        <img src="{{ asset('images/about/founder.jpg') }}" alt="Mr. Muhammad Mwiga" class="md:w-2/5 h-56 md:h-auto object-cover object-top">
+        <div class="p-6 md:p-8 flex flex-col justify-center">
+            <p class="text-sm uppercase tracking-wide text-orange-600 font-medium">Our Founder</p>
+            <h2 class="text-2xl font-bold text-gray-900 mt-1">Mr. Muhammad Mwiga</h2>
+            <p class="text-gray-600 mt-3">Founded Salama Children's Home on 7 January 2023 after personally supporting five street children who went on to become skilled professionals. His vision: care, protection, education and skills for every vulnerable child.</p>
+            <a href="{{ route('about') }}" class="inline-block mt-4 text-salama font-semibold hover:underline">Read the full story →</a>
         </div>
-    </section>
+    </div>
+</section>
 
 @endsection

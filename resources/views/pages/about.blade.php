@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('title', 'About Us')
-@section('meta_description', 'Salama Children\'s Home was founded by Mr. Muhammad Mwiga on 7 January 2023 to provide care, protection, education and skills to orphans and vulnerable children in Pwani and Dar es Salaam.')
+@section('meta_description', "Salama Children's Home was founded by Mr. Muhammad Mwiga on 7 January 2023 to provide care, protection, education and skills to orphans and vulnerable children in Pwani and Dar es Salaam.")
 
 @section('content')
 <div class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-6">About Salama Children’s Home</h1>
+    <h1 class="text-3xl font-bold mb-6">About Salama Children's Home</h1>
 
     <div class="bg-white rounded-xl shadow overflow-hidden">
         {{-- Founder photo --}}
@@ -14,7 +14,7 @@
                  class="w-full h-64 sm:h-80 object-cover object-top">
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                 <p class="text-white font-semibold text-lg">Mr. Muhammad Mwiga</p>
-                <p class="text-white/90 text-sm">Founder, Salama Children’s Home</p>
+                <p class="text-white/90 text-sm">Founder, Salama Children's Home</p>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <section>
                 <h2 class="text-xl font-bold text-gray-900 mb-3">Our Founder</h2>
                 <p class="text-gray-700 leading-relaxed">
-                    Salama Children’s Home was founded by <strong>Mr. Muhammad Mwiga</strong> in collaboration with other committed individuals, in response to the challenges facing orphans and other vulnerable children in the Pwani and Dar es Salaam regions — particularly those lacking access to education, shelter and proper healthcare.
+                    Salama Children's Home was founded by <strong>Mr. Muhammad Mwiga</strong> in collaboration with other committed individuals, in response to the challenges facing orphans and other vulnerable children in the Pwani and Dar es Salaam regions — particularly those lacking access to education, shelter and proper healthcare.
                 </p>
                 <p class="text-gray-700 leading-relaxed mt-4">
                     Driven by compassion, Mr. Muhammad began using funds from his daily activities to support five children living on the streets who had been exposed to sexual harassment and other forms of abuse. He provided them with care, protection and hope for a better future.
@@ -31,7 +31,7 @@
                     Those five children successfully acquired professional skills and became an electrician, a technician, a carpenter, a nurse and a cosmetician. Their success inspired Mr. Muhammad Mwiga to extend similar opportunities to more orphans and vulnerable children.
                 </p>
                 <p class="text-gray-700 leading-relaxed mt-4">
-                    This vision led to the official establishment of <strong>Salama Children’s Home on 7 January 2023</strong>, with a mission to provide care, protection, education and skills development — enabling children to build brighter and more independent futures.
+                    This vision led to the official establishment of <strong>Salama Children's Home on 7 January 2023</strong>, with a mission to provide care, protection, education and skills development — enabling children to build brighter and more independent futures.
                 </p>
             </section>
 

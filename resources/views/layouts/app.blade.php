@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@yield('meta_description', 'Salama Children\'s Home - Supporting orphans and vulnerable children in Bagamoyo, Tanzania through education, vocational training and care.')">
-    <title>@yield('title', 'Salama Connect') — Salama Children\'s Home</title>
+    <meta name="description" content="@yield('meta_description', "Salama Children's Home - Supporting orphans and vulnerable children in Bagamoyo, Tanzania through education, vocational training and care.")">
+    <title>@yield('title', 'Salama Connect') — Salama Children's Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root { --salama-orange: #e67e22; --salama-dark: #2c3e50; }
@@ -19,8 +19,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="{{ route('home') }}" class="flex items-center gap-2">
-                    <img src="{{ asset('images/logo.png') }}" alt="Salama Children Home" class="h-10 w-auto object-contain">
-                    <span class="text-lg font-bold text-gray-900 hidden sm:inline">Salama Children Home</span>
+                    <img src="{{ asset('images/logo.png') }}" alt="Salama Children's Home" class="h-10 w-auto object-contain">
+                    <span class="text-lg font-bold text-gray-900 hidden sm:inline">Salama Children's Home</span>
                 </a>
                 <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
                     <a href="{{ route('home') }}" class="hover:text-salama">{{ __('messages.home') }}</a>
@@ -45,7 +45,7 @@
     <footer class="bg-gray-900 text-gray-300 mt-16">
         <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
             <div>
-                <h3 class="text-white font-bold text-lg mb-3">Salama Children\'s Home</h3>
+                <h3 class="text-white font-bold text-lg mb-3">Salama Children's Home</h3>
                 <p class="text-sm">Supporting orphans and vulnerable children in Bagamoyo, Tanzania through kindergarten, vocational training and care.</p>
             </div>
             <div>
@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="border-t border-gray-800 text-center py-4 text-xs">
-            &copy; {{ date('Y') }} Salama Children\'s Home (SOVc). All rights reserved.
+            &copy; {{ date('Y') }} Salama Children's Home (SOVc). All rights reserved.
         </div>
     </footer>
     @stack('scripts')

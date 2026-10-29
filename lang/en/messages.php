@@ -1,4 +1,5 @@
 <?php
+
 return [
     'home' => 'Home',
     'find_support' => 'Find Support',
@@ -14,5 +15,5 @@ return [
     'request_help_btn' => 'Request Help',
     'our_programs' => 'Our Programs',
     'our_mission' => 'Our Mission',
-    'mission_text' => 'Founded by Mr. Muhammad Mwiga on 7 January 2023, Salama Children\'s Home provides care, protection, education and skills development so orphans and vulnerable children can build brighter, independent futures.',
+    'mission_text' => "Founded by Mr. Muhammad Mwiga on 7 January 2023, Salama Children's Home provides care, protection, education and skills development so orphans and vulnerable children can build brighter, independent futures.",
 ];
