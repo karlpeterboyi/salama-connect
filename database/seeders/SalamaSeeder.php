@@ -11,29 +11,30 @@ class SalamaSeeder extends Seeder
 {
     public function run(): void
     {
-        // Primary facility - Salama Children's Home
-        Facility::create([
-            'name' => "Salama Children's Home (SOVc)",
-            'slug' => 'salama-childrens-home',
-            'type' => 'childrens_home',
-            'description' => 'Salama Children\'s Home was founded by Mr. Muhammad Mwiga on 7 January 2023. We provide care, protection, education and skills development for orphans and vulnerable children in Bagamoyo (Pwani) and surrounding areas through kindergarten, mechanics and tailoring programmes.',
-            'region' => 'Coast',
-            'district' => 'Bagamoyo',
-            'address' => 'Kiharaka, Bagamoyo, Tanzania',
-            'latitude' => -6.4455,
-            'longitude' => 38.9012,
-            'phone' => '+255 688 489 495',
-            'email' => 'info@salamachildrens.or.tz',
-            'website' => 'https://salamachildrens.or.tz',
-            'services' => ['kindergarten', 'mechanics training', 'tailoring', 'shelter', 'vocational education'],
-            'status' => 'active',
-            'verified_at' => now(),
-            'next_review_at' => now()->addYear(),
-            'verification_source' => 'Organisation self-declaration',
-            'is_salama_owned' => true,
-        ]);
+        // Idempotent — safe to run on every deploy
+        Facility::updateOrCreate(
+            ['slug' => 'salama-childrens-home'],
+            [
+                'name' => "Salama Children's Home (SOVc)",
+                'type' => 'childrens_home',
+                'description' => 'Salama Children\'s Home was founded by Mr. Muhammad Mwiga on 7 January 2023. We provide care, protection, education and skills development for orphans and vulnerable children in Bagamoyo (Pwani) and surrounding areas through kindergarten, mechanics and tailoring programmes.',
+                'region' => 'Coast',
+                'district' => 'Bagamoyo',
+                'address' => 'Kiharaka, Bagamoyo, Tanzania',
+                'latitude' => -6.4455,
+                'longitude' => 38.9012,
+                'phone' => '+255 688 489 495',
+                'email' => 'info@salamachildrens.or.tz',
+                'website' => 'https://salamachildrens.or.tz',
+                'services' => ['kindergarten', 'mechanics training', 'tailoring', 'shelter', 'vocational education'],
+                'status' => 'active',
+                'verified_at' => now(),
+                'next_review_at' => now()->addYear(),
+                'verification_source' => 'Organisation self-declaration',
+                'is_salama_owned' => true,
+            ]
+        );
 
-        // Sample programs
         $programs = [
             [
                 'title' => 'Kindergarten Programme',
@@ -68,9 +69,10 @@ class SalamaSeeder extends Seeder
         ];
 
         foreach ($programs as $data) {
-            Program::create(array_merge($data, [
-                'slug' => Str::slug($data['title']),
-            ]));
+            Program::updateOrCreate(
+                ['slug' => Str::slug($data['title'])],
+                $data
+            );
         }
     }
 }
