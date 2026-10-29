@@ -23,11 +23,11 @@ services:
       - key: LOG_LEVEL
         value: info
       - key: SESSION_DRIVER
-        value: database
+        value: file
       - key: CACHE_STORE
-        value: database
+        value: file
       - key: QUEUE_CONNECTION
-        value: database
+        value: sync
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_SSLMODE
@@ -58,14 +58,6 @@ services:
         fromDatabase:
           name: salama-db
           property: password
-      - key: PESAPAL_CONSUMER_KEY
-        sync: false
-      - key: PESAPAL_CONSUMER_SECRET
-        sync: false
-      - key: PESAPAL_LIVE
-        value: "false"
-      - key: PESAPAL_NOTIFICATION_ID
-        sync: false
 
 databases:
   - name: salama-db
